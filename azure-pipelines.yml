@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - main  # Adjust to your main branch name
+      - master
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -14,7 +14,7 @@ steps:
 
   - script: |
       npm install
-      npm run build  # Adjust this command based on your build script
+      npm run build
     displayName: 'Install and build'
 
   # Add deployment steps based on your requirements (e.g., Azure Web App deployment)
