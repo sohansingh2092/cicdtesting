@@ -15,8 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React yu can check new changes now in master lorem ipsum doloar isiet 
-        </a>
+dfsdfsdg        </a>
       </header>
     </div>
   );
