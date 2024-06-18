@@ -14,7 +14,22 @@ steps:
 
   - script: |
       npm install
-      npm run build
-    displayName: 'Install and build'
+    displayName: 'Install dependencies'
 
-  # Add deployment steps based on your requirements (e.g., Azure Web App deployment)
+  - script: |
+      npm test
+    displayName: 'Run tests'
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/jest-results.xml'
+      failTaskOnFailedTests: true
+    condition: succeededOrFailed()
+
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: 'Cobertura'
+      summaryFileLocation: 'coverage/cobertura-coverage.xml'
+      reportDirectory: 'coverage'
+      failIfCoverageEmpty: true
