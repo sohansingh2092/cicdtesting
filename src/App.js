@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React yu can check new changes now in mastere
         </a>
       </header>
     </div>
